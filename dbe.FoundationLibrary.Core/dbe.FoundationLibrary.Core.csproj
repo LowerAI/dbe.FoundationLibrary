@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net462;net6;</TargetFrameworks>
+		<Platforms>AnyCPU;x64</Platforms>
+		<Configurations>Debug;Release;</Configurations>
+		<Company>dbe</Company>
+		<Copyright>Copyright © 2022 dbe</Copyright>
+		<Authors>DBE</Authors>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<Version>1.0.0.0</Version>
+		<RootNamespace>$(MSBuildProjectName)</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="CustComm\**" />
+	  <Compile Remove="DataConvert\**" />
+	  <Compile Remove="Plugin\**" />
+	  <Compile Remove="Res\**" />
+	  <Compile Remove="RTUComm\**" />
+	  <EmbeddedResource Remove="CustComm\**" />
+	  <EmbeddedResource Remove="DataConvert\**" />
+	  <EmbeddedResource Remove="Plugin\**" />
+	  <EmbeddedResource Remove="Res\**" />
+	  <EmbeddedResource Remove="RTUComm\**" />
+	  <None Remove="CustComm\**" />
+	  <None Remove="DataConvert\**" />
+	  <None Remove="Plugin\**" />
+	  <None Remove="Res\**" />
+	  <None Remove="RTUComm\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <AdditionalFiles Remove="app.manifest" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="Extensions\DynamicExtension.cs" />
+	  <Compile Remove="Util\BleCore.cs" />
+	  <Compile Remove="Util\BluetoothUtils.cs" />
+	  <Compile Remove="Util\ComplexPath.cs" />
+	  <Compile Remove="Util\ConfigInfo%28T%29.cs" />
+	  <Compile Remove="Util\PathSwitch.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+		<PackageReference Include="NLog" Version="5.3.2" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework)=='net462'">
+		<Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+		<Reference Include="System.Management" />
+		<PackageReference Include="System.Memory" Version="4.5.5" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework)=='net6'">
+		<PackageReference Include="System.IO.Ports" Version="8.0.0" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="NLog.config">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="NLog.xsd">
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+</Project>

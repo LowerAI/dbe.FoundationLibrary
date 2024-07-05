@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net462;net6;</TargetFrameworks>
+		<Platforms>AnyCPU;x64</Platforms>
+		<Configurations>Debug;Release;</Configurations>
+		<Company>dbe</Company>
+		<Copyright>Copyright © 2022 dbe</Copyright>
+		<Authors>DBE</Authors>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<Version>1.0.0.0</Version>
+		<RootNamespace>$(MSBuildProjectName)</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="DataConvert\**" />
+	  <Compile Remove="Plugin\**" />
+	  <Compile Remove="Properties\**" />
+	  <Compile Remove="Res\**" />
+	  <EmbeddedResource Remove="DataConvert\**" />
+	  <EmbeddedResource Remove="Plugin\**" />
+	  <EmbeddedResource Remove="Properties\**" />
+	  <EmbeddedResource Remove="Res\**" />
+	  <None Remove="DataConvert\**" />
+	  <None Remove="Plugin\**" />
+	  <None Remove="Properties\**" />
+	  <None Remove="Res\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <AdditionalFiles Remove="app.manifest" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="Extensions\DynamicExtension.cs" />
+	  <Compile Remove="RTUComm\WirelessWaferCommunicationProtocol_TLV.cs" />
+	  <Compile Remove="Util\BleCore.cs" />
+	  <Compile Remove="Util\BluetoothUtils.cs" />
+	  <Compile Remove="Util\ComplexPath.cs" />
+	  <Compile Remove="Util\ConfigInfo%28T%29.cs" />
+	  <Compile Remove="Util\PathSwitch.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="InTheHand.BluetoothLE" Version="4.0.36" />
+		<PackageReference Include="InTheHand.Net.Bluetooth" Version="4.1.43" />
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework)=='net462'">
+		<Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+		<Reference Include="System.Management" />
+		<PackageReference Include="System.Memory" Version="4.5.5" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework)=='net6'">
+		<PackageReference Include="System.IO.Ports" Version="8.0.0" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\dbe.FoundationLibrary.Core\dbe.FoundationLibrary.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="NLog.config">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="NLog.xsd">
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+</Project>

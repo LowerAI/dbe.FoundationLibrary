@@ -1,0 +1,173 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net462;net6-windows</TargetFrameworks>
+		<UseWindowsForms>true</UseWindowsForms>
+		<Platforms>AnyCPU;x64</Platforms>
+		<Configurations>Debug;Release;v1-Debug;v1-Release;v2-Debug;v2-Release</Configurations>
+		<Company>上海集迦电子科技有限公司</Company>
+		<Copyright>Copyright © 2022 GND-eTech</Copyright>
+		<Authors>GNDView</Authors>
+		<AssemblyVersion>1.0.5.8</AssemblyVersion>
+		<Version>1.0.5.8</Version>
+		<RootNamespace>$(MSBuildProjectName)</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='net6-windows|AnyCPU'">
+		<Optimize>False</Optimize>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='net6-windows|x64'">
+		<Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6-windows|AnyCPU'">
+		<DebugType>full</DebugType>
+		<Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v2-Debug|net6-windows|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v1-Debug|net6-windows|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6-windows|x64'">
+		<DebugType>full</DebugType>
+		<Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v2-Debug|net6-windows|x64'">
+	  <DebugType>full</DebugType>
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v1-Debug|net6-windows|x64'">
+	  <DebugType>full</DebugType>
+	  <Optimize>False</Optimize>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6-windows|AnyCPU'">
+		<DebugType>full</DebugType>
+		<Optimize>True</Optimize>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v2-Release|net6-windows|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v1-Release|net6-windows|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6-windows|x64'">
+		<DebugType>full</DebugType>
+		<Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v2-Release|net6-windows|x64'">
+	  <DebugType>full</DebugType>
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v1-Release|net6-windows|x64'">
+	  <DebugType>full</DebugType>
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v1-Release|net462|AnyCPU'">
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v1-Release|net462|x64'">
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v2-Release|net462|AnyCPU'">
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='v2-Release|net462|x64'">
+	  <Optimize>True</Optimize>
+	</PropertyGroup>
+	
+	<ItemGroup>
+	  <Compile Remove="DataConvert\**" />
+	  <Compile Remove="Plugin\**" />
+	  <Compile Remove="Res\**" />
+	  <EmbeddedResource Remove="DataConvert\**" />
+	  <EmbeddedResource Remove="Plugin\**" />
+	  <EmbeddedResource Remove="Res\**" />
+	  <None Remove="DataConvert\**" />
+	  <None Remove="Plugin\**" />
+	  <None Remove="Res\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <AdditionalFiles Remove="app.manifest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="InTheHand.BluetoothLE" Version="4.0.36" />
+		<PackageReference Include="InTheHand.Net.Bluetooth" Version="4.1.43" />
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+		<PackageReference Include="NLog" Version="5.3.2" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework)=='net462'">
+		<Reference Include="Microsoft.CSharp" />
+        <Reference Include="System.ComponentModel.DataAnnotations" />
+		<Reference Include="System.Management" />
+		<PackageReference Include="System.Memory" Version="4.5.5" />
+		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework)=='net6-windows'">
+		<PackageReference Include="System.IO.Ports" Version="8.0.0" />
+		<PackageReference Include="System.Management" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\dbe.FoundationLibrary.Communication\dbe.FoundationLibrary.Communication.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+		  <DesignTime>True</DesignTime>
+		  <AutoGen>True</AutoGen>
+		  <DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="UI\CommonDialogs\AboutDlg.cs" />
+		<Compile Update="UI\CommonDialogs\HCISettingsDlg1.cs" />
+		<Compile Update="UI\CommonDialogs\MultiLanguageSettingsDlg.cs" />
+		<Compile Update="UI\CustomForms\BaseWithBorderless.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="UI\CommonDialogs\HCISettingsDlg.cs" />
+		<Compile Update="UI\CommonDialogs\SoftwareRegistrationDlg.cs">
+			<SubType>Form</SubType>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="NLog.xsd">
+			<SubType>Designer</SubType>
+		</None>
+	</ItemGroup>
+</Project>
