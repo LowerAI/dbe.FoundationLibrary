@@ -47,7 +47,7 @@ namespace dbe.FoundationLibrary.Windows.UI.CommonDialogs
         {
             get
             {
-                var pwsStr = $"GND{MachineCode}{productVersion}";
+                var pwsStr = $"xxx{MachineCode}{productVersion}";
                 var registerCode = MD5Helper.Encrypt16Bit(pwsStr);//计算注册码
                 return registerCode;
             }

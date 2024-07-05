@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GNDView.Library.RTUComm
+namespace dbe.FoundationLibrary.Communication.RTUComm
 {
     /// <summary>
     /// UART设备变更事件

@@ -98,7 +98,7 @@
             this.lbl_Company.Size = new System.Drawing.Size(249, 20);
             this.lbl_Company.TabIndex = 12;
             this.lbl_Company.TabStop = true;
-            this.lbl_Company.Text = "上海集迦电子科技有限公司";
+            this.lbl_Company.Text = "xx有限公司";
             this.lbl_Company.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picbox_Trademark
@@ -122,7 +122,7 @@
             this.lnklbl_Website.Size = new System.Drawing.Size(209, 20);
             this.lnklbl_Website.TabIndex = 13;
             this.lnklbl_Website.TabStop = true;
-            this.lnklbl_Website.Text = "http://gnd-etech.com";
+            this.lnklbl_Website.Text = "http://xxx.com";
             this.lnklbl_Website.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lnklbl_Website.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklbl_Website_LinkClicked);
             // 
@@ -160,7 +160,7 @@
             this.lnklbl_Email.Size = new System.Drawing.Size(189, 20);
             this.lnklbl_Email.TabIndex = 17;
             this.lnklbl_Email.TabStop = true;
-            this.lnklbl_Email.Text = "info@gnd-etech.com";
+            this.lnklbl_Email.Text = "info@xxx.com";
             this.lnklbl_Email.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lnklbl_Email.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklbl_Email_LinkClicked);
             // 

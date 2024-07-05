@@ -33,7 +33,7 @@ namespace dbe.FoundationLibrary.Windows.UI.CommonDialogs
             this.isRegistered = isRegistered;
         }
 
-        public AboutDlg(AssemblyAttributeUtil aau, WinFormEnvironment deploymentEnvironment = WinFormEnvironment.Production, bool isRegistered = false) : this(aau.AssemblyProduct, aau.AssemblyTitle.TrimStart("GNDView.".ToCharArray()), aau.AssemblyInformationalVersion, aau.AssemblyCopyright, aau.CompiledOn, deploymentEnvironment, isRegistered)
+        public AboutDlg(AssemblyAttributeUtil aau, WinFormEnvironment deploymentEnvironment = WinFormEnvironment.Production, bool isRegistered = false) : this(aau.AssemblyProduct, aau.AssemblyTitle.TrimStart("xxView.".ToCharArray()), aau.AssemblyInformationalVersion, aau.AssemblyCopyright, aau.CompiledOn, deploymentEnvironment, isRegistered)
         {
         }
         #endregion 构造与析构 end

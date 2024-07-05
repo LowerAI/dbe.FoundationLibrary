@@ -926,7 +926,7 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         //{
         //    return Task.Run(() =>
         //    {
-        //        //协议：帧头(集迦) + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
+        //        //协议：帧头 + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
         //        //字节数：4       + 2       + 1     + ?       +  2    + 2
         //        bool ret = false;
         //        try
@@ -959,7 +959,7 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         ///// <returns>返回下位机响应的数据流</returns>
         //public override async Task<byte[]> WriteRegisterThenRecvAckAsync<T>(byte? chNum, byte funCode, params T[] values)
         //{
-        //    //协议：帧头(集迦) + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
+        //    //协议：帧头 + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
         //    //字节数：4       + 2       + 1     + ?       +  2    + 2
         //    byte[] recBuffer = null;
         //    try
@@ -1002,7 +1002,7 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         /// <returns>true表示发送成功，false表示发送失败</returns>
         public override Task<bool> WriteRegisterAsync(byte? chNum, byte funCode, params dynamic[] values)
         {
-            //协议：帧头(集迦) + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
+            //协议：帧头 + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
             //字节数：4       + 2       + 1     + ?       +  2    + 2
             bool ret = false;
             try
@@ -1039,7 +1039,7 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         /// <returns>返回下位机响应的数据流</returns>
         public override async Task<byte[]> WriteRegisterThenRecvAckAsync(byte? chNum, byte funCode, params dynamic[] values)
         {
-            //协议：帧头(集迦) + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
+            //协议：帧头 + 指令长度 + 功能码 + 寄存器值 + crc16 + 帧尾(回车换行)
             //字节数：4       + 2       + 1     + ?       +  2    + 2
             byte[] recBuffer = null;
             try

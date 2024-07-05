@@ -5,7 +5,7 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<Platforms>AnyCPU;x64</Platforms>
 		<Configurations>Debug;Release;v1-Debug;v1-Release;v2-Debug;v2-Release</Configurations>
-		<Company>上海集迦电子科技有限公司</Company>
+		<Company>xx有限公司</Company>
 		<Copyright>Copyright © 2022 GND-eTech</Copyright>
 		<Authors>GNDView</Authors>
 		<AssemblyVersion>1.0.5.8</AssemblyVersion>

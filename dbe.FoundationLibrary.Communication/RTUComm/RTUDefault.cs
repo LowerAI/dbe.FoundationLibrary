@@ -75,9 +75,9 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         /// </summary>
         public const int CrcValueLength = 2;
         /// <summary>
-        /// 串行数据默认的前缀部分(默认为集迦)
+        /// 串行数据默认的前缀部分(默认为xx)
         /// </summary>
-        public const string FixedPrefix = "集迦";
+        public const string FixedPrefix = "xx";
         /// <summary>
         /// 串行数据默认的后缀部分(默认为回车换行符)
         /// </summary>
@@ -85,7 +85,7 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         /// <summary>
         /// 无效的SN
         /// </summary>
-        public const string InvalidSN = "GND_000";
+        public const string InvalidSN = "xxx_000";
         /// <summary>
         /// WCS协议的默认通道号(对应指令格式3)，由于没参与运算仅占位所以是固定值
         /// </summary>
@@ -93,7 +93,7 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         /// <summary>
         /// 无效的从机设备名
         /// </summary>
-        public static readonly byte[] InvalidDeviceName = "GND_FFFFFFFFFFFF".ToByteArray();
+        public static readonly byte[] InvalidDeviceName = "xxx_FFFFFFFFFFFF".ToByteArray();
         /// <summary>
         /// 特殊功能码校验字典
         /// 通常应答数据的功能码与发送指令的功能码一致，但是也有例外，比如蓝牙配置指令发送的E7预期的是E8
@@ -161,21 +161,21 @@ namespace dbe.FoundationLibrary.Communication.RTUComm
         public static readonly Guid ServiceGuid = InTheHand.Net.Bluetooth.BluetoothService.SerialPort;
 
         /// <summary>
-        /// 集迦自定义的Ble数据传输uuid
+        /// xx自定义的Ble数据传输uuid
         /// </summary>
-        [BluetoothUti("集迦自定义的Ble数据传输uuid")]
+        [BluetoothUti("xx自定义的Ble数据传输uuid")]
         public static readonly BluetoothUuid NusBaseService = new Guid("6863bcaf-6544-4e47-6961-68676e616853");
 
         /// <summary>
-        /// 集迦自定义的Ble数据传输服务写特征uuid
+        /// xx自定义的Ble数据传输服务写特征uuid
         /// </summary>
-        [BluetoothUti("集迦自定义的Ble数据传输服务写特征uuid")]
+        [BluetoothUti("xx自定义的Ble数据传输服务写特征uuid")]
         public static readonly BluetoothUuid NusWriteChtt = new Guid("68630002-6544-4e47-6961-68676e616853");
 
         /// <summary>
-        /// 集迦自定义的Ble数据传输服务读特征uuid
+        /// xx自定义的Ble数据传输服务读特征uuid
         /// </summary>
-        [BluetoothUti("集迦自定义的Ble数据传输服务读特征uuid")]
+        [BluetoothUti("xx自定义的Ble数据传输服务读特征uuid")]
         public static readonly BluetoothUuid NusReadChtt = new Guid("68630003-6544-4e47-6961-68676e616853");
         #endregion 蓝牙部分 end
 
